@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+
+<body>
+
+    Digite uma senha: <input type="text" id="iSenha" oninput="trocaForte()">
+    <p id="pAnalise"></p>
+
+</body>
+
+</html>
+
+<script>
+
+    function trocaForte() {
+        let senha = iSenha.value;
+
+        if (senha.toLowerCase().includes('a')) {
+            senha = senha.replaceAll('a', '@')
+            senha = senha.replaceAll('A', '@')
+        }
+
+        if (senha.toLowerCase().includes('e')) {
+            senha = senha.replaceAll('e', '3')
+            senha = senha.replaceAll('E', '3')
+        }
+
+        pAnalise.innerHTML = `Nova senha: ${senha}`
+    }
+</script>

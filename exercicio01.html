@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+
+<body>
+
+    Digite uma frase: <input type="text" id="iFrase"> <br>
+
+    <button onclick="analisarFrase()">Analisar Frase</button>
+    <p id="pAnalise"></p>
+    
+</body>
+</html>
+
+<script>
+
+    function analisarFrase(){
+        let frase = iFrase.value;
+        let tamanhoDaFrase = frase.length;
+        let msg = '';
+
+        msg += `Tamanho da Frase: ${tamanhoDaFrase}`
+
+
+        if(tamanhoDaFrase < 10){
+            msg += `<br> <span style="color: red;">Frase Curta!</span>`
+        }else{
+            msg += `<br> <span style="color: blue;">Frase longa!</spa>`
+
+        }
+
+        pAnalise.innerHTML = msg
+    }
+</script>

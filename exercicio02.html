@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+
+<body>
+
+    Digite uma frase: <input type="text" id="iFrase"> <br>
+
+    <button onclick="analisarFrase()">Analisar Frase</button>
+    <p id="pAnalise"></p>
+    
+</body>
+</html>
+
+<script>
+
+    function analisarFrase(){
+        let frase = iFrase.value;
+
+          if (frase.includes('teste') || frase.includes('abc') || frase.includes('spam')) {
+            pAnalise.innerHTML = `<br><span style="color: red;">Frase Inválida!</span>`            
+        }else{
+              pAnalise.innerHTML = `<br><span style="color: green;">Frase Válida!</span>`            
+          }
+    }
+</script>
