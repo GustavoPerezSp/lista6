@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 04</title>
+    <title>Exercicio 05</title>
 </head>
 
 <body>
 
     <span id="favorito"></span> <input type="text" id="iFavorito">
     <button onclick="cadastrarFilme()">Cadastrar filme</button>
-    <button onclick="verFavoritos()">Ver Favoritos</button>
     <p id="pMsg"></p>
 
 
@@ -34,23 +33,17 @@
             iFavorito.value = ''
         }
 
-    }
-
-    function verFavoritos() {
         if (filmesFavoritos.length >= 1) {
-            pMsg.innerHTML = `Seus Filmes Favoritos são: 
-                            ${filmesFavoritos.toString().replaceAll(',', ', ')}`
+            pMsg.innerHTML = `Seu filme favorito: ${filmesFavoritos[0]}<br>`
 
-            pMsg.innerHTML += `<br>Total: ${filmesFavoritos.length}<br>
-                                O que filme que mais gosta é ${filmesFavoritos[0]}.<br>
-                                 E desses, o que menos gosta é ${filmesFavoritos[filmesFavoritos.length - 1]}`
+            if (filmesFavoritos.length < 3) {
+                pMsg.innerHTML += `Seu 3º filme favorito: Ainda não existe<br>`
+            } else {
+                pMsg.innerHTML += `Seu 3º filme favorito: ${filmesFavoritos[2]}<br>`
+            }
+
+            pMsg.innerHTML += `Total de filmes cadastrados: ${filmesFavoritos.length}`
         }
     }
-
-
-
-
-
-
 
 </script>
