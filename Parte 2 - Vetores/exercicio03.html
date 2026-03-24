@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+
+<body>
+
+    Bairro: <input type="text" id="iBairro">
+    <button onclick="cadastrarBairro()">Cadastrar bairro</button> <br><br>
+
+    Qual foi o meu bairro: <input type="text" id="iNumero">
+    <button onclick="relembrarMoradia()">Relembrar moradia</button>
+    <p id="pMsg"></p>
+
+</body>
+
+</html>
+
+<script>
+
+    let bairrosMorados = [];
+
+    function cadastrarBairro() {
+        let bairro = iBairro.value;
+
+        if (bairro != '') {
+            bairrosMorados.push(bairro)
+            pMsg.innerHTML = `${bairro} adicionado!`
+        } else {
+            pMsg.innerHTML = `Digite um Bairro para Adicionar`
+        }
+
+    }
+
+    function relembrarMoradia() {
+        let num = Number(iNumero.value);
+
+        if (num > bairrosMorados.length) {
+            pMsg.innerHTML = `Você ainda não morou num ${num}º bairro!`
+        } else {
+            pMsg.innerHTML = `${bairrosMorados[num - 1]}`
+        }
+    }
+
+</script>

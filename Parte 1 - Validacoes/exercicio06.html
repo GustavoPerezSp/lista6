@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+
+<body>
+
+    Digite uma frase qualquer: <input type="text" id="iFrase" > <br><br>
+    Qual o numero da letra que deseja ver? <input type="text" id="iNumero" oninput="informar()">
+    <p id="pMsg"></p>
+
+</body>
+
+</html>
+
+<script>
+
+    function informar() {
+        let frase = iFrase.value;
+        let index = Number(iNumero.value)
+
+        pMsg.innerHTML =    `A primeira letra é: ${frase[0]}<br>
+                            A ${index}ª letra é: ${frase[ index - 1]}<br>
+                            A última letra é: ${frase[ frase.length - 1]}`
+    }
+</script>

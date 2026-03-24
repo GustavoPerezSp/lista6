@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+
+<body>
+
+    Digite uma letra: <input type="text" id="iLetra" oninput="umaLetra()">
+    <button onclick="verificarLetras()">Verificar Letras</button>
+    <p id="pMsg"></p>
+
+</body>
+
+</html>
+
+<script>
+    let palavra = 'morango'
+
+    function verificarLetras() {
+        let letra = iLetra.value;
+
+        if(palavra.includes(letra)){
+            pMsg.innerHTML = `A letra ${letra} aparece na palavra secreta!`
+        }else{
+            pMsg.innerHTML = `A letra ${letra} não aparece na palavra secreta!`
+        }    
+    }
+
+    function umaLetra(){
+        let letra = iLetra.value;
+
+        if(letra.length > 1){
+            letra = letra[0]
+            iLetra.value = `${letra}`
+        }
+    }
+
+
+
+</script>

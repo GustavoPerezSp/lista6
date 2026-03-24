@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eercicio 04</title>
+</head>
+
+<body>
+
+    <span id="favorito"></span> <input type="text" id="iFavorito">
+    <button onclick="cadastrarFilme()">Cadastrar filme</button>
+    <button onclick="verFavoritos()">Ver Favoritos</button>
+    <p id="pMsg"></p>
+
+
+</body>
+
+</html>
+
+<script>
+    let contadorFavorito = 1;
+    favorito.innerHTML = `${contadorFavorito}º Filme favorito:`
+
+    let filmesFavoritos = [];
+    function cadastrarFilme() {
+        let filme = iFavorito.value;
+
+        if (filme != '') {
+            filmesFavoritos.push(filme)
+            contadorFavorito++
+            favorito.innerHTML = `${contadorFavorito}º Filme favorito:`
+            iFavorito.value = ''
+        }
+
+    }
+
+    function verFavoritos() {
+        if (filmesFavoritos.length >= 1) {
+            pMsg.innerHTML = `Seus Filmes Favoritos são: 
+                            ${filmesFavoritos.toString().replaceAll(',', ', ')}`
+
+            pMsg.innerHTML += `<br>Total: ${filmesFavoritos.length}<br>
+                                O que filme que mais gosta é ${filmesFavoritos[0]}.<br>
+                                 E desses, o que menos gosta é ${filmesFavoritos[filmesFavoritos.length - 1]}`
+        }
+    }
+
+
+
+
+
+
+
+</script>

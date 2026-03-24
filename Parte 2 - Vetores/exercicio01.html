@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+
+<body>
+
+    Procurar pela Fruta: <input type="text" id="iFruta">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <p id="pPesquisa"></p>
+
+</body>
+
+</html>
+
+<script>
+
+    var frutas = ['uva', 'pessego', 'morango', 'abacaxi']
+    function pesquisar() {
+        let fruta = iFruta.value;
+
+        if(frutas.includes(fruta)){
+            pPesquisa.innerHTML = `A fruta ${fruta} existe na lista.`
+        }else{
+            pPesquisa.innerHTML = `Não existe a fruta ${fruta} na lista.`
+        }
+
+    }
+
+</script>

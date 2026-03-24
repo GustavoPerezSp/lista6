@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+
+<body>
+
+    Senha: <input type="text" id="iSenha" oninput="forcaSenha()">
+    <p id="pMsg"></p>
+
+</body>
+
+</html>
+
+<script>
+
+    function forcaSenha() {
+        let senha = iSenha.value;
+        let criterio = 0;
+
+        if (senha.length >= 8) {
+            criterio++
+        }
+
+        if (senha != senha.toLowerCase()) {
+            criterio++
+        }
+
+        if (senha != senha.toUpperCase()) {
+            criterio++
+        }
+
+        if(criterio == 0){
+            pMsg.innerHTML = `Insegura`
+        } else if(criterio == 1){
+            pMsg.innerHTML = `Fraca`
+        }else if(criterio == 1){
+            pMsg.innerHTML = `Média`
+        }else{
+            pMsg.innerHTML = `Forte`
+        }
+
+
+
+    }
+</script>

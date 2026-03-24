@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+
+<body>
+
+    Digite a primeira palavra: <input type="text" id="iPrimeira"> <br><br>
+    Digite a segunda palavra: <input type="text" id="iSegunda"> <br>
+
+    <button onclick="analisar()">Analisar Palavras</button>
+    <p id="pMsg"></p>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function analisar() {
+        let primeira = iPrimeira.value
+        let segunda = iSegunda.value
+
+        if(primeira == segunda){
+            pMsg.innerHTML = `As palavras ${primeira} e ${segunda} são exatamente iguais!`
+        } else if(primeira.toLowerCase == segunda.toLowerCase){
+            pMsg.innerHTML = `As palavras ${primeira} e ${segunda} possuem o mesmo conteúdo, mas a digitação é diferente (maiúsculas e minúsculas)`
+        } else{
+            pMsg.innerHTML = `As palavras ${primeira} e ${segunda} são completamente diferentes!`
+        }
+    }
+
+
+</script>
